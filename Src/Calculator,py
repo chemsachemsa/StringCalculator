@@ -1,0 +1,20 @@
+import re
+
+def add(numbers: str) -> int:
+
+    if numbers == "":
+        return 0
+
+
+    if numbers.endswith(",") or numbers.endswith("\n"):
+        raise ValueError("Separator at the end is not allowed")
+
+
+    parts = re.split("[,\n]", numbers)
+
+
+    total = 0
+    for part in parts:
+        total += int(part)
+
+    return total
